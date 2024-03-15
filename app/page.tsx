@@ -26,9 +26,9 @@ export default function LayoutPage() {
     )
   }
   return (
-    <div className="flex min-h-screen h-screen bg-slate-50 items-center justify-center">
-      <Card className="w-[440px] h-[700px] rounded-lg">
-        <CardHeader className="px-10 pt-10 md:pt-6 flex-row items-center gap-4 shadow-md">
+    <div className="flex min-h-screen bg-slate-50 md:items-center justify-center">
+      <Card className="w-[440px] md:h-[700px] rounded-lg">
+        <CardHeader className="px-10 flex-row items-center gap-4 shadow-md">
           <Avatar className="w-14 h-14 shadow-sm">
             <AvatarFallback>DM</AvatarFallback>
             <AvatarImage src="./profile.jpg" />
