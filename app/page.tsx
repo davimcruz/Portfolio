@@ -3,6 +3,17 @@ import { DownloadCloud } from "lucide-react"
 import { Code } from "lucide-react"
 import { BookMarked } from "lucide-react"
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -25,9 +36,16 @@ export default function LayoutPage() {
       "_blank"
     )
   }
+
+  const viewCode = () => {
+    window.open(
+      "https://github.com/davimcruz/Portfolio/blob/main/app/page.tsx",
+      "_blank"
+    )
+  }
   return (
     <div className="flex min-h-screen bg-slate-50 md:items-center justify-center">
-      <Card className="w-[440px] md:h-[700px] rounded-lg">
+      <Card className="w-[440px] md:h-[700px] rounded-lg shadow-xl">
         <CardHeader className="px-10 flex-row items-center gap-4 shadow-md">
           <Avatar className="w-14 h-14 shadow-sm">
             <AvatarFallback>DM</AvatarFallback>
@@ -72,9 +90,29 @@ export default function LayoutPage() {
           >
             <DownloadCloud className="mr-4" /> Download Currículo
           </Button>
-          <Button variant="outline" className="text-lg p-6 w-full">
-            <Code className="mr-4" /> Visualizar Código
-          </Button>
+
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline" className="text-lg p-6 w-full">
+                <Code className="mr-4" /> Visualizar Código
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Visualização de Código</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Você será redirecionado para a respectiva página no Github
+                  contendo o código desse Portfólio.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction onClick={viewCode}>
+                  Continuar
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </Card>
     </div>
