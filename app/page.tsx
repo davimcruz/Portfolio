@@ -30,6 +30,10 @@ import {
 import { Button } from "@/components/ui/button"
 
 export default function LayoutPage() {
+  const viewPortfolio = () => {
+    window.location.href = "/portfolio";
+  }
+
   const handleDownload = () => {
     window.open(
       "https://drive.google.com/uc?export=download&id=1rgRqIWg_41wbelFTD8esAy-5CzlvKVa8",
@@ -43,6 +47,7 @@ export default function LayoutPage() {
       "_blank"
     )
   }
+
   return (
     <div className="flex min-h-screen bg-slate-50 md:items-center justify-center">
       <Card className="w-[440px] md:h-[700px] rounded-lg shadow-xl">
@@ -80,7 +85,11 @@ export default function LayoutPage() {
           </AccordionItem>
         </Accordion>
         <div className="flex justify-center items-center py-20 gap-6 flex-col max-w-screen-sm mx-12">
-          <Button variant="outline" className="text-lg p-6 w-full">
+          <Button
+            onClick={viewPortfolio}
+            variant="outline"
+            className="text-lg p-6 w-full"
+          >
             <BookMarked className="mr-4" /> Portfólio de Projetos
           </Button>
           <Button
