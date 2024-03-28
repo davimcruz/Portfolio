@@ -1,46 +1,56 @@
 "use client"
-import "../../app/globals.css"
+import { Inter } from "next/font/google"
 import Image from "next/image"
+import "../../app/globals.css"
 
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Card, CardContent } from "@/components/ui/card"
+  Card,
+  CardContent,
+  CardDescription,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export default function PortfolioPage() {
-  const imagePaths = ["/profile.jpg", "/profile.jpg", "/profile.jpg"]
-
   return (
-    <div className="flex min-h-screen bg-slate-50 items-center justify-center">
-      <div className="px-16">
-        {" "}
-        <Carousel className="max-w-xs w-full">
-          <CarouselContent>
-            {imagePaths.map((imagePath, index) => (
-              <CarouselItem key={index}>
-                <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <Image
-                        src={imagePath}
-                        alt={`Image ${index + 1}`}
-                        width={200}
-                        height={200}
-                        priority
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+    <div className={inter.className}>
+      <div className="flex min-h-screen bg-slate-50 items-center justify-center">
+        <div className="flex justify-between gap-8 h-[800px]">
+          <Card className="w-[900px] h-[800px]">
+            <CardTitle className="ml-8 mt-8">Coldfy Project</CardTitle>
+            <CardDescription className="ml-8 mt-2">
+              Agência de Desenvolvimento Web
+            </CardDescription>
+            <Image
+              src=""
+              alt="Coldfy Project Image 1"
+              width={700}
+              height={300}
+            ></Image>
+          </Card>
+          <div className="flex flex-col justify-between">
+            <div className="mb-4">
+              <Card className="w-[550px] h-[550px]">
+                <CardContent>Teste</CardContent>
+              </Card>
+            </div>
+            <div>
+              <Card className="w-[550px] h-[200px]">
+                <CardContent>Teste</CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

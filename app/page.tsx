@@ -31,7 +31,7 @@ import { Button } from "@/components/ui/button"
 
 export default function LayoutPage() {
   const viewPortfolio = () => {
-    window.location.href = "/portfolio";
+    window.location.href = "/portfolio"
   }
 
   const handleDownload = () => {
@@ -57,7 +57,7 @@ export default function LayoutPage() {
             <AvatarImage src="./profile.jpg" />
           </Avatar>
           <div>
-            <CardTitle>Davi Machado</CardTitle>
+            <CardTitle className="font-semibold">Davi Machado</CardTitle>
             <CardDescription>Desenvolvedor Frontend</CardDescription>
           </div>
         </CardHeader>
