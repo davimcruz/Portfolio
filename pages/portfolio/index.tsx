@@ -34,14 +34,14 @@ export default function PortfolioPage() {
                 ></Image>
               </div>
               <Separator className="mt-8" />
-              <div className="mt-16 flex justify-center">
-                <p className="mx-2 mt-2">
+              <div className="lg:mt-16 mt-8 flex justify-center">
+                <p className="mx-2 lg:mt-2 lg:mb-0 mb-4">
                   Solução Web desenvolvida a partir de{" "}
                   <b>viéses cognitivos de Design</b>, bem como uma{" "}
                   <b>UI amigável</b> e <b>direta</b> com o usuário.
                   <br /> Inteiramente feita e otimizada para uma{" "}
                   <b>boa experiência de uso</b>, tal como visando a maximização
-                  de <b>captura de clientes</b>
+                  de <b>captura de clientes </b>
                   para a empresa. <br /> <b>Imersivo</b> e extremamente{" "}
                   <b>otimizado</b>, alcançando <b>98 pontos</b> no PageSpeed.
                 </p>
@@ -53,7 +53,9 @@ export default function PortfolioPage() {
               <CardContent>Teste</CardContent>
             </Card>
             <Card className="w-full lg:w-[550px] lg:h-[200px] mt-auto">
-              <CardContent>Teste</CardContent>
+              <CardContent>
+                proximo projeto / voltar para o inicio / projeto anterior
+              </CardContent>
             </Card>
           </div>
         </div>
