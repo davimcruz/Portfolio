@@ -31,12 +31,15 @@ export default function PortfolioPage() {
             <CardDescription className="ml-8 mt-2">
               Agência de Desenvolvimento Web
             </CardDescription>
-            <Image
-              src=""
-              alt="Coldfy Project Image 1"
-              width={700}
-              height={300}
-            ></Image>
+            <CardContent className="flex justify-center items-center mt-8">
+              <Image
+                className="rounded-xl"
+                src="https://davimachado.cloud/coldfy-1.png"
+                alt="Coldfy Project Image 1"
+                width={830}
+                height={467}
+              ></Image>
+            </CardContent>
           </Card>
           <div className="flex flex-col justify-between">
             <div className="mb-4">
