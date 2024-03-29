@@ -36,7 +36,6 @@ interface projectsData {
 }
 
 import projectsData from "./projectsData"
-
 export default function PortfolioPage() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
 
