@@ -12,7 +12,20 @@ const projectsData = [
     git: "https://github.com/davimcruz/Coldfy-Project",
   },
   {
-    name: "SpaceLabs",
+    name: "Subway Money",
+    description: "Web Game",
+    image: "https://davimachado.cloud/subway.svg",
+    text: `Maior projeto que participei, obtemos mais de 15 milhões de usuários. Se trata de um jogo web replicado do jogo SubwaySurfers. Essa aplicação é extremamente
+    completa, contamos com sistemas de Registro, Login, Recuperação de Senha, Pagamento (Cash in e Cash out), Integrações com API's de terceiros, Dashboard Admin e mais.
+    Isso claro com um sistema de segurança restrito, garantindo a legitimidade das transações e requests. Focado totalmente em escala e volume de dados.`,
+    status: "Online",
+    tech: ["PHP", "Laravel", "JavaScript"],
+    others: ["SQL", "Interal Webhooks", "Payment Validation"],
+    link: "https://subwaymoneyy.com/",
+    git: "https://github.com/davimcruz/SubwayMoney",
+  },
+  {
+    name: "Space Labs",
     description: "Marketplace Completo para Gamers",
     image: "https://davimachado.cloud/spacelabs.svg",
     text: `Solução Web feita inteiramente para Gamers. Esse projeto conta com um sistema inteiro de Dashboard, Perfil, Pedidos e tudo o que uma boa dashboard tem direito.
@@ -35,18 +48,6 @@ const projectsData = [
     others: ["Optimized iFrames", "PWA", "Vercel Hosted"],
     link: "https://pagamuito.app/",
     git: "https://github.com/davimcruz/pagaMuito-Frontend",
-  },
-  {
-    name: "SpaceLabs",
-    description: "Marketplace Completo para Gamers",
-    image: "https://davimachado.cloud/spacelabs.svg",
-    text: `Solução Web feita inteiramente para Gamers. Esse projeto conta com um sistema inteiro de Dashboard, Perfil, Pedidos e tudo o que uma boa dashboard tem direito.
-    Solucionamos uma grande dor da comunidade: comprar e vender serviços dentro do Minecraft. Totalmente otimizado para escala e experiência de usuário. `,
-    status: "Online",
-    tech: ["React.js", "Next.js", "Node.js"],
-    others: ["Motion", "International App", "Vercel Hosted"],
-    link: "https://spacelabs.vercel.app/dashboard/overview",
-    git: "https://github.com/davimcruz/SpaceLabs-Frontend",
   },
 ]
 
