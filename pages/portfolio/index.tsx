@@ -10,16 +10,34 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+
+import {
+  ChevronLeft,
+  ChevronRight,
+  SquareArrowOutUpRight,
+  Github,
+} from "lucide-react"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function PortfolioPage() {
+  const goToProject = () => {
+    window.open("https://coldfy-production-line.vercel.app/pt-BR", "_blank")
+  }
+  const goToGithub = () => {
+    window.open("https://github.com/davimcruz/Coldfy-Project", "_blank")
+  }
+
   return (
-    <div className={inter.className}>
-      <div className="flex min-h-screen bg-slate-50 items-center justify-center">
-        <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between gap-8 h-[800px] w-full lg:max-w-screen-xl mx-auto lg:mt-0 mt-6">
-          <Card className="lg:w-[900px] lg:h-[800px] w-full mb-8 lg:mb-0 lg:shadow-md shadow-sm">
-            <CardTitle className="ml-8 mt-8">Coldfy Project</CardTitle>
+    <div
+      className={`${inter.className} flex items-center lg:justify-center lg:h-screen bg-slate-50`}
+    >
+      <div className="flex items-center justify-center bg-slate-50">
+        <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:gap-8 gap-8 h-[800px] w-full lg:max-w-screen-xl mt-6">
+          <Card className="lg:w-[900px] lg:h-[800px] w-full mb-1 lg:mb-0 -mt-8 shadow-sm">
+            <CardTitle className="ml-8 lg:mt-8 mt-12">Coldfy Project</CardTitle>
             <CardDescription className="ml-8 mt-2">
               Agência de Desenvolvimento Web
             </CardDescription>
@@ -29,6 +47,7 @@ export default function PortfolioPage() {
                 <Image
                   src="https://davimachado.cloud/coldfy-1.svg"
                   alt="Coldfy Project Image 1"
+                  priority
                   width={712}
                   height={400}
                 ></Image>
@@ -48,13 +67,74 @@ export default function PortfolioPage() {
               </div>
             </CardContent>
           </Card>
-          <div className="flex flex-col gap-8 w-full lg:w-auto">
-            <Card className="w-full lg:w-[550px] lg:h-[550px]">
-              <CardContent>Teste</CardContent>
-            </Card>
-            <Card className="w-full lg:w-[550px] lg:h-[200px] mt-auto">
+          <div className="flex flex-col gap-4 w-full lg:w-auto">
+            <Card className="w-full lg:w-[550px] lg:h-[550px] lg:-mt-6 shadow-sm">
+              <CardTitle className="ml-8 mt-8">
+                Informações do Projeto
+              </CardTitle>
+              <Separator className="mt-8" />
               <CardContent>
-                proximo projeto / voltar para o inicio / projeto anterior
+                <div className="lg:ml-8 ml-2 mt-8 lg:flex">
+                  <p>Status:</p>
+                  <Badge className="lg:mt-0 lg:ml-4 mt-4">Online</Badge>
+                </div>
+                <div className="lg:ml-8 ml-2 mt-8 lg:flex">
+                  <p>Principais Tecnologias:</p>
+                  <Badge className="lg:mt-0 lg:ml-4 mt-4">React.js</Badge>
+                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Next.js</Badge>
+                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Node.js</Badge>
+                </div>
+                <div className="lg:ml-8 ml-2 mt-8 lg:flex">
+                  <p>Outros:</p>
+                  <Badge className="lg:mt-0 lg:ml-4 mt-4">FramerMotion</Badge>
+                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Lucide</Badge>
+                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Vercel Hosted</Badge>
+                </div>
+                <Separator className="mt-12" />
+                <div className="flex justify-center mt-12">
+                  <Button
+                    onClick={goToProject}
+                    variant="outline"
+                    className="text-lg p-6 w-[350px]"
+                  >
+                    <SquareArrowOutUpRight className="mr-6" /> Visitar Projeto
+                  </Button>
+                </div>
+                <div className="flex justify-center mt-8">
+                  <Button
+                    onClick={goToGithub}
+                    variant="outline"
+                    className="text-lg p-6 w-[350px] lg:mb-0 mb-4"
+                  >
+                    <Github className="mr-4" /> Acessar Repositório
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-full lg:w-[550px] lg:h-[80px] mt-auto lg:block hidden shadow-sm">
+              <CardContent>
+                <div className="flex justify-center items-center gap-4 mt-5">
+                  <Button
+                    variant="secondary"
+                    className="text-sm w-[180px] lg:mb-0 mb-4"
+                  >
+                    <ChevronLeft className="mr-4" /> Projeto Anterior
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    className="text-sm w-[180px] lg:mb-0 mb-4"
+                  >
+                    Voltar ao Início
+                  </Button>
+
+                  <Button
+                    variant="secondary"
+                    className="text-sm w-[180px] lg:mb-0"
+                  >
+                    Próximo Projeto <ChevronRight className="ml-4" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
