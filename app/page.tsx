@@ -58,7 +58,7 @@ export default function LayoutPage() {
           </Avatar>
           <div>
             <CardTitle className="font-semibold">Davi Machado</CardTitle>
-            <CardDescription>Desenvolvedor Frontend</CardDescription>
+            <CardDescription>Desenvolvedor FullStack</CardDescription>
           </div>
         </CardHeader>
         <CardContent></CardContent>
