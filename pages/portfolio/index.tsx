@@ -2,6 +2,7 @@
 import { Inter } from "next/font/google"
 import Image from "next/image"
 import "../../app/globals.css"
+import { useState } from "react"
 
 import {
   Card,
@@ -22,13 +23,44 @@ import {
 
 const inter = Inter({ subsets: ["latin"] })
 
+interface projects {
+  name: string
+  description: string
+  image: string
+  text: string
+  status: string
+  tech: string[]
+  others: string[]
+  link: string
+  git: string
+}
+
+import projects from "./projectsData"
+
 export default function PortfolioPage() {
-  const goToProject = () => {
-    window.open("https://coldfy-production-line.vercel.app/pt-BR", "_blank")
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
+
+  const goToProject = (url: string) => {
+    window.open(url, "_blank")
   }
-  const goToGithub = () => {
-    window.open("https://github.com/davimcruz/Coldfy-Project", "_blank")
+
+  const goHome = () => {
+    window.location.href = "/"
   }
+
+  const goToPreviousProject = () => {
+    setCurrentProjectIndex((prevIndex) =>
+      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+    )
+  }
+
+  const goToNextProject = () => {
+    setCurrentProjectIndex((prevIndex) =>
+      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+    )
+  }
+
+  const currentProject = projects[currentProjectIndex]
 
   return (
     <div
@@ -37,32 +69,27 @@ export default function PortfolioPage() {
       <div className="flex items-center justify-center bg-slate-50">
         <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:gap-8 gap-8 h-[800px] w-full lg:max-w-screen-xl mt-6">
           <Card className="lg:w-[900px] lg:h-[800px] w-full mb-1 lg:mb-0 -mt-8 shadow-sm">
-            <CardTitle className="ml-8 lg:mt-8 mt-12">Coldfy Project</CardTitle>
+            <CardTitle className="ml-8 lg:mt-8 mt-12">
+              {currentProject?.name}
+            </CardTitle>
             <CardDescription className="ml-8 mt-2">
-              Agência de Desenvolvimento Web
+              {currentProject?.description}
             </CardDescription>
             <Separator className="mt-8" />
             <CardContent>
               <div className="flex justify-center items-center">
                 <Image
-                  src="https://davimachado.cloud/coldfy-1.svg"
-                  alt="Coldfy Project Image 1"
+                  src={currentProject?.image}
+                  alt="Project Image"
                   priority
                   width={712}
                   height={400}
-                ></Image>
+                />
               </div>
               <Separator className="mt-8" />
               <div className="lg:mt-16 mt-8 flex justify-center">
                 <p className="mx-2 lg:mt-2 lg:mb-0 mb-4">
-                  Solução Web desenvolvida a partir de{" "}
-                  <b>viéses cognitivos de Design</b>, bem como uma{" "}
-                  <b>UI amigável</b> e <b>direta</b> com o usuário.
-                  <br /> Inteiramente feita e otimizada para uma{" "}
-                  <b>boa experiência de uso</b>, tal como visando a maximização
-                  de <b>captura de clientes </b>
-                  para a empresa. <br /> <b>Imersivo</b> e extremamente{" "}
-                  <b>otimizado</b>, alcançando <b>98 pontos</b> no PageSpeed.
+                  {currentProject?.text}
                 </p>
               </div>
             </CardContent>
@@ -76,24 +103,36 @@ export default function PortfolioPage() {
               <CardContent>
                 <div className="lg:ml-8 ml-2 mt-8 lg:flex">
                   <p>Status:</p>
-                  <Badge className="lg:mt-0 lg:ml-4 mt-4">Online</Badge>
+                  <Badge className="lg:mt-0 lg:ml-4 mt-4">
+                    {currentProject?.status}
+                  </Badge>
                 </div>
                 <div className="lg:ml-8 ml-2 mt-8 lg:flex">
                   <p>Principais Tecnologias:</p>
-                  <Badge className="lg:mt-0 lg:ml-4 mt-4">React.js</Badge>
-                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Next.js</Badge>
-                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Node.js</Badge>
+                  {currentProject?.tech.map((technology, index) => (
+                    <Badge
+                      key={index}
+                      className="lg:mt-0 lg:ml-4 lg:mr-0 mr-4 mt-4"
+                    >
+                      {technology}
+                    </Badge>
+                  ))}
                 </div>
                 <div className="lg:ml-8 ml-2 mt-8 lg:flex">
                   <p>Outros:</p>
-                  <Badge className="lg:mt-0 lg:ml-4 mt-4">FramerMotion</Badge>
-                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Lucide</Badge>
-                  <Badge className="lg:mt-0 lg:ml-4 ml-4">Vercel Hosted</Badge>
+                  {currentProject?.others.map((other, index) => (
+                    <Badge
+                      key={index}
+                      className="lg:mt-0 lg:ml-4 lg:mr-0 mr-4 mt-4"
+                    >
+                      {other}
+                    </Badge>
+                  ))}
                 </div>
                 <Separator className="mt-12" />
                 <div className="flex justify-center mt-12">
                   <Button
-                    onClick={goToProject}
+                    onClick={() => goToProject(currentProject?.link)}
                     variant="outline"
                     className="text-lg p-6 w-[350px]"
                   >
@@ -102,7 +141,7 @@ export default function PortfolioPage() {
                 </div>
                 <div className="flex justify-center mt-8">
                   <Button
-                    onClick={goToGithub}
+                    onClick={() => goToProject(currentProject?.git)}
                     variant="outline"
                     className="text-lg p-6 w-[350px] lg:mb-0 mb-4"
                   >
@@ -115,6 +154,7 @@ export default function PortfolioPage() {
               <CardContent>
                 <div className="flex justify-center items-center gap-4 mt-5">
                   <Button
+                    onClick={goToPreviousProject}
                     variant="secondary"
                     className="text-sm w-[180px] lg:mb-0 mb-4"
                   >
@@ -122,6 +162,7 @@ export default function PortfolioPage() {
                   </Button>
 
                   <Button
+                    onClick={goHome}
                     variant="outline"
                     className="text-sm w-[180px] lg:mb-0 mb-4"
                   >
@@ -129,6 +170,7 @@ export default function PortfolioPage() {
                   </Button>
 
                   <Button
+                    onClick={goToNextProject}
                     variant="secondary"
                     className="text-sm w-[180px] lg:mb-0"
                   >
