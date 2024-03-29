@@ -35,7 +35,7 @@ interface projectsData {
   git: string
 }
 
-import projectsData from "./projectsData"
+import projectsData from "../../lib/projectsData"
 export default function PortfolioPage() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
 
