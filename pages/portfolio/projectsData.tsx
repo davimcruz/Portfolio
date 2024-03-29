@@ -12,9 +12,9 @@ const projects = [
     git: "https://github.com/davimcruz/Coldfy-Project",
   },
   {
-    name: "Projeto 2",
-    description: "Descrição do Projeto 2",
-    image: "https://davimachado.cloud/coldfy-1.svg",
+    name: "Paga Muito",
+    description: "Salas de Apostas para Cassinos",
+    image: "https://davimachado.cloud/pagamuito.svg",
     text: "Texto do Projeto 2",
     status: "Online",
     tech: ["React.js", "teste.js", "Node.js"],
