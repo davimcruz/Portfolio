@@ -66,7 +66,7 @@ export default function LayoutPage() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Resumo</AccordionTrigger>
             <AccordionContent>
-              Desenvolvedor Fullstack com 4 anos de experiência.
+              Desenvolvedor Fullstack com 5 anos de experiência.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
