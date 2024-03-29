@@ -1,4 +1,4 @@
-const projects = [
+const projectsData = [
   {
     name: "Coldfy Project",
     description: "Agência de Desenvolvimento Web",
@@ -24,4 +24,4 @@ const projects = [
   },
 ]
 
-export default projects
+export default projectsData

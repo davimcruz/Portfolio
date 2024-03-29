@@ -23,7 +23,7 @@ import {
 
 const inter = Inter({ subsets: ["latin"] })
 
-interface projects {
+interface projectsData {
   name: string
   description: string
   image: string
@@ -35,7 +35,7 @@ interface projects {
   git: string
 }
 
-import projects from "./projectsData"
+import projectsData from "./projectsData"
 
 export default function PortfolioPage() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0)
@@ -50,17 +50,17 @@ export default function PortfolioPage() {
 
   const goToPreviousProject = () => {
     setCurrentProjectIndex((prevIndex) =>
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+      prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1
     )
   }
 
   const goToNextProject = () => {
     setCurrentProjectIndex((prevIndex) =>
-      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
+      prevIndex === projectsData.length - 1 ? 0 : prevIndex + 1
     )
   }
 
-  const currentProject = projects[currentProjectIndex]
+  const currentProject = projectsData[currentProjectIndex]
 
   return (
     <div
