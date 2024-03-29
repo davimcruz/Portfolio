@@ -25,6 +25,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 interface projectsData {
   name: string
+  number: string
   description: string
   image: string
   text: string
@@ -68,9 +69,14 @@ export default function PortfolioPage() {
       <div className="flex items-center justify-center bg-slate-50">
         <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:gap-8 gap-8 h-[800px] w-full lg:max-w-screen-xl mt-6">
           <Card className="lg:w-[900px] lg:h-[800px] w-full mb-1 lg:mb-0 -mt-8 shadow-sm">
-            <CardTitle className="ml-8 lg:mt-8 mt-12">
-              {currentProject?.name}
-            </CardTitle>
+            <div className="flex justify-between">
+              <CardTitle className="ml-8 lg:mt-8 mt-12">
+                {currentProject?.name}
+              </CardTitle>
+              <CardDescription className="lg:mt-8 mt-12 pt-4 mr-8">
+                {currentProject?.number}
+              </CardDescription>
+            </div>
             <CardDescription className="ml-8 mt-2">
               {currentProject?.description}
             </CardDescription>
@@ -149,15 +155,15 @@ export default function PortfolioPage() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-full lg:w-[550px] lg:h-[80px] mt-auto lg:block hidden shadow-sm">
+            <Card className="w-full lg:w-[550px] lg:h-[80px] mt-auto shadow-sm">
               <CardContent>
                 <div className="flex justify-center items-center gap-4 mt-5">
                   <Button
                     onClick={goToPreviousProject}
                     variant="secondary"
-                    className="text-sm w-[180px] lg:mb-0 mb-4"
+                    className="text-sm w-[50px] lg:mb-0 mb-4"
                   >
-                    <ChevronLeft className="mr-4" /> Projeto Anterior
+                    <ChevronLeft />
                   </Button>
 
                   <Button
@@ -171,9 +177,9 @@ export default function PortfolioPage() {
                   <Button
                     onClick={goToNextProject}
                     variant="secondary"
-                    className="text-sm w-[180px] lg:mb-0"
+                    className="text-sm w-[50px] lg:mb-0 mb-4"
                   >
-                    Próximo Projeto <ChevronRight className="ml-4" />
+                    <ChevronRight />
                   </Button>
                 </div>
               </CardContent>

@@ -1,6 +1,7 @@
 const projectsData = [
   {
     name: "Coldfy Project",
+    number: "1/4",
     description: "Agência de Desenvolvimento Web",
     image: "https://davimachado.cloud/coldfy-1.svg",
     text: `Solução Web desenvolvida a partir de viéses cognitivos de Design, bem como uma UI amigável e direta com o usuário.
@@ -13,6 +14,7 @@ const projectsData = [
   },
   {
     name: "Subway Money",
+    number: "2/4",
     description: "Web Game",
     image: "https://davimachado.cloud/subway.svg",
     text: `Maior projeto que participei, obtemos mais de 15 milhões de usuários. Se trata de um jogo web replicado do jogo SubwaySurfers. Essa aplicação é extremamente
@@ -26,6 +28,7 @@ const projectsData = [
   },
   {
     name: "Space Labs",
+    number: "3/4",
     description: "Marketplace Completo para Gamers",
     image: "https://davimachado.cloud/spacelabs.svg",
     text: `Solução Web feita inteiramente para Gamers. Esse projeto conta com um sistema inteiro de Dashboard, Perfil, Pedidos e tudo o que uma boa dashboard tem direito.
@@ -38,6 +41,7 @@ const projectsData = [
   },
   {
     name: "Paga Muito",
+    number: "4/4",
     description: "Salas de Apostas para Cassinos",
     image: "https://davimachado.cloud/pagamuito.svg",
     text: `Solução Web desenvolvida para solucionar a maior dor do mercado de cassinos: aquisição de leads. Desenvolvida inteiramente para PWA e se portar na web

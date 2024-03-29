@@ -36,7 +36,7 @@ export default function LayoutPage() {
 
   const handleDownload = () => {
     window.open(
-      "https://drive.google.com/uc?export=download&id=1rgRqIWg_41wbelFTD8esAy-5CzlvKVa8",
+      "https://drive.google.com/uc?export=download&id=1xmdUhtV5Y9TyYNADqT045wF8uo40qtOv",
       "_blank"
     )
   }
@@ -66,21 +66,22 @@ export default function LayoutPage() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Resumo</AccordionTrigger>
             <AccordionContent>
-              Desenvolvedor Frontend com 4 anos de experiência.
+              Desenvolvedor Fullstack com 4 anos de experiência.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>Tecnologias</AccordionTrigger>
             <AccordionContent>
-              Javascript/Typescript, Node.js, Next.js, React.js, Vue.js,
-              Tailwind, Shadcn-ui, Laravel
+              Javascript/Typescript, PHP, Node.js, Next.js, React.js, Vue.js,
+              Tailwind, Shadcn-ui, Laravel, SQL/noSQL
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Conhecimento Complementar</AccordionTrigger>
             <AccordionContent>
               Git, Github; Otimização de tempo de carregamento (LCP, FCP, CLS,
-              TTI) e responsividade (Media Queries);
+              TTI); Escala e Manutenção de grandes aplicações; Otimização de
+              consulta e tratamento de grandes volumes de dados.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
